@@ -1,4 +1,10 @@
 package org.example.repositories;
 
-public interface ReposityEndereco {
+import org.example.entities.Endereco;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+
+@Repository
+public interface ReposityEndereco extends JpaRepository <Endereco, Long > {
 }
