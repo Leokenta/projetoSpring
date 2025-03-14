@@ -38,7 +38,7 @@ public class ServiceUsuario {
             if (optional.isPresent()) {
                 Usuario usuario1 = optional.get();
                 usuario1.setNomeUsuario(usuario.getNomeUsuario());
-                usuario1.setIdade((usuario.getIdade()));
+                usuario1.setIdade(usuario.getIdade());
                 repository.save(usuario1);
                 return true;
             }

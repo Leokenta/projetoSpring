@@ -22,14 +22,14 @@ public class ResourceUsuario {
         return ResponseEntity.ok(usuario);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id_usuario}")
     public ResponseEntity<Usuario> findByAll(@PathVariable Long id) {
         Optional<Usuario> usuario = service.findById(id);
         return usuario.map(ResponseEntity::ok).orElseGet(()
                 -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id_usuario}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
