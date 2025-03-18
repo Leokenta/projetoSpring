@@ -23,14 +23,14 @@ public class ResourceCliente {
         return ResponseEntity.ok(cliente);
     }
 
-    @DeleteMapping("/{id_cliente}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Cliente>findAll(@PathVariable Long id) {
         Optional<Cliente>cliente = service.FindById(id);
         return cliente.map(ResponseEntity::ok).orElseGet(()
                 -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("{id_cliente}")
+    @DeleteMapping("{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){
         service.delete(id);
         return ResponseEntity.noContent().build();
